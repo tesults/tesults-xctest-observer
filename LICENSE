@@ -1,19 +1,4 @@
-# tesults-xctest-observer
-
-Report test results data with Tesults (https://www.tesults.com) from tests written using the XCTest framework.
-
-## Documentation
-
-Find the latest installation, configuration and usage documentation for this package at https://www.tesults.com/docs/xctest
-
-## Support
-
-Contact help@tesults.com for support.
-
-
-## License
-
-MIT
+MIT License
 
 Copyright (c) 2022 Tesults
 
@@ -34,3 +19,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
