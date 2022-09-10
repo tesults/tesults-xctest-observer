@@ -31,7 +31,11 @@ public class TesultsXCTestObserver : NSObject, XCTestObservation {
     }
     
     private func extractSuite (rawSuite: String) -> String {
-        return rawSuite.substringAfter(".")
+        // get the suite and remove the test name and what comes before the suite name
+        var ret = rawSuite.substringBefore("]")
+        ret = ret.substringAfter("[")
+        ret = ret.substringBefore(" ")
+        return ret
     }
     
     private func extractName (rawName: String) -> String {
@@ -65,10 +69,10 @@ public class TesultsXCTestObserver : NSObject, XCTestObservation {
     
     public func testCaseDidFinish(_ testCaseRaw: XCTestCase) {
         var testCase = Dictionary<String, Any>()
-        testCase["suite"] = extractSuite(rawSuite: testCaseRaw.className)
+        testCase["suite"] = extractSuite(rawSuite: testCaseRaw.name)
         testCase["name"] = extractName(rawName: testCaseRaw.name)
         testCase["desc"] = testCaseRaw.description
-        testCase["_Raw Suite"] = testCaseRaw.className
+        testCase["_Raw Name"] = testCaseRaw.name
         testCase["result"] = "unknown"
         
         var reasons : [String] = []
